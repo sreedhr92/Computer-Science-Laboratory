@@ -1,0 +1,13 @@
+var i:integer=1;
+var a:integer=2;
+var b:integer=3;
+var c:integer=4;
+var d:integer=5;
+var 
+x:integer=5;begin
+if (i>0) then
+    x=a+b*c/d;
+else
+    x=a*b*c-d;
+end_if
+end
