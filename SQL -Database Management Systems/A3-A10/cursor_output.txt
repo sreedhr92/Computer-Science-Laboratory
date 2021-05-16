@@ -1,0 +1,442 @@
+SQL> @F:\cursors.sql
+SQL> set echo on;
+SQL> set linesize 150;
+SQL> 
+SQL> rem dropping the tables...
+SQL> drop table order_list;
+
+Table dropped.
+
+SQL> drop table orders;
+
+Table dropped.
+
+SQL> drop table pizza;
+
+Table dropped.
+
+SQL> drop table customer;
+
+Table dropped.
+
+SQL> 
+SQL> rem creating the table
+SQL> 
+SQL> create table customer
+  2  (
+  3  	     cust_id varchar2(10) constraint cust_pr primary key,
+  4  	     cust_name varchar2(20),
+  5  	     address varchar2(40),
+  6  	     phone number(10)
+  7  );
+
+Table created.
+
+SQL> 
+SQL> create table pizza
+  2  (
+  3  	     pizza_id varchar2(10) constraint pizza_pr primary key,
+  4  	     pizza_type varchar2(20),
+  5  	     unit_price number(10)
+  6  );
+
+Table created.
+
+SQL> 
+SQL> create table orders
+  2  (
+  3  	     order_no varchar2(10) constraint order_pr primary key,
+  4  	     cust_id varchar2(10) constraint cust_fk references customer(cust_id),
+  5  	     order_date date,
+  6  	     delv_date date
+  7  );
+
+Table created.
+
+SQL> 
+SQL> create table order_list
+  2  (
+  3  	     order_no varchar2(10) constraint order_fk references orders(order_no),
+  4  	     pizza_id varchar2(10) constraint pizza_fk references pizza(pizza_id),
+  5  	     qty number(10),
+  6  	     constraint order_list_pk primary key(order_no,pizza_id)
+  7  );
+
+Table created.
+
+SQL> rem populating table;
+SQL> @F:\pizza_db.sql
+SQL> --*****************************************************
+SQL> --UCS1412				     B.Senthil Kumar
+SQL> --Database Lab			     Asst. Prof
+SQL> -- 			 Computer Science Department
+SQL> -- 			  SSN College of Engineering
+SQL> -- 				  senthil@ssn.edu.in
+SQL> --*****************************************************
+SQL> -- 	       PIZZA ORDERING DATASET
+SQL> -- 		Version 1.0
+SQL> -- 	       February 05, 2015
+SQL> --*****************************************************
+SQL> --Sources:
+SQL> -- 	This dataset is prepared for the assignment
+SQL> --      on DML, PL/SQL blocks in Database Programming.
+SQL> --      This is a test dataset - pizza ordered on 28 & 29th Jun 2015.
+SQL> --      Do NOT MODIFY the instances.
+SQL> --
+SQL> --******************************************************
+SQL> 
+SQL> 
+SQL> REm customer(cust_id, cust_name, address, phone)
+SQL> REM pizza (pizza_id, pizza_type, unit_price)
+SQL> REM orders(order_no, cust_id, order_date ,delv_date, total_amt)
+SQL> REM order_list(order_no, pizza_id, qty)
+SQL> 
+SQL> 
+SQL> REM ------------------------------------------------------------------------------------------
+> 
+SQL> REM customer(cust_id, cust_name,address,phone)
+SQL> 
+SQL> insert into customer values('c001','Hari','32 RING ROAD,ALWARPET',9001200031);
+
+1 row created.
+
+SQL> insert into customer values('c002','Ashok','42 bull ROAD,numgambakkam',9444120003);
+
+1 row created.
+
+SQL> insert into customer values('c003','Raj','12a RING ROAD,ALWARPET',9840112003);
+
+1 row created.
+
+SQL> insert into customer values('c004','Raghu','P.H ROAD,Annanagar',9845712993);
+
+1 row created.
+
+SQL> insert into customer values('c005','Sindhu','100 feet ROAD,vadapalani',9840166677);
+
+1 row created.
+
+SQL> insert into customer values('c006','Brinda','GST ROAD, TAMBARAM', 9876543210);
+
+1 row created.
+
+SQL> 
+SQL> 
+SQL> 
+SQL> REM pizza (pizza_id, pizza_type, unit_price)
+SQL> 
+SQL> insert into pizza values('p001','pan',130);
+
+1 row created.
+
+SQL> insert into pizza values('p002','grilled',230);
+
+1 row created.
+
+SQL> insert into pizza values('p003','italian',200);
+
+1 row created.
+
+SQL> insert into pizza values('p004','spanish',260);
+
+1 row created.
+
+SQL> 
+SQL> REM insert into pizza values('p005','supremo',250);
+SQL> 
+SQL> 
+SQL> 
+SQL> REM orders(order_no, cust_id, order_date ,delv_date)
+SQL> 
+SQL> insert into orders values('OP100','c001','28-JUN-2015','30-JUN-2015');
+
+1 row created.
+
+SQL> insert into orders values('OP200','c002','28-JUN-2015','30-JUN-2015');
+
+1 row created.
+
+SQL> insert into orders values('OP300','c003','29-JUN-2015','01-JUL-2015');
+
+1 row created.
+
+SQL> insert into orders values('OP400','c004','29-JUN-2015','01-JUL-2015');
+
+1 row created.
+
+SQL> insert into orders values('OP500','c001','29-JUN-2015','01-JUL-2015');
+
+1 row created.
+
+SQL> insert into orders values('OP600','c002','29-JUN-2015','01-JUL-2015');
+
+1 row created.
+
+SQL> 
+SQL> 
+SQL> 
+SQL> REM order_list(order_no, pizza_id, qty)
+SQL> 
+SQL> insert into order_list values('OP100','p001',3);
+
+1 row created.
+
+SQL> insert into order_list values('OP100','p002',2);
+
+1 row created.
+
+SQL> insert into order_list values('OP100','p003',1);
+
+1 row created.
+
+SQL> insert into order_list values('OP100','p004',5);
+
+1 row created.
+
+SQL> 
+SQL> insert into order_list values('OP200','p003',2);
+
+1 row created.
+
+SQL> insert into order_list values('OP200','p001',6);
+
+1 row created.
+
+SQL> insert into order_list values('OP200','p004',8);
+
+1 row created.
+
+SQL> 
+SQL> insert into order_list values('OP300','p003',3);
+
+1 row created.
+
+SQL> 
+SQL> insert into order_list values('OP400','p001',3);
+
+1 row created.
+
+SQL> insert into order_list values('OP400','p004',1);
+
+1 row created.
+
+SQL> 
+SQL> insert into order_list values('OP500','p003',6);
+
+1 row created.
+
+SQL> insert into order_list values('OP500','p004',5);
+
+1 row created.
+
+SQL> insert into order_list values('OP500','p001',null);
+
+1 row created.
+
+SQL> 
+SQL> insert into order_list values('OP600','p002',3);
+
+1 row created.
+
+SQL> 
+SQL> --******************************************************
+SQL> SET SERVEROUTPUT ON;
+SQL> 
+SQL> REM 1. Check whether the given pizza type is available. If not display appropriate message.
+SQL> 
+SQL> DECLARE
+  2  	     ptype pizza.pizza_type%type;
+  3  
+  4  BEGIN
+  5  	     ptype := '&ptype';
+  6  	     UPDATE pizza SET pizza_type=pizza_type WHERE pizza_type=ptype;
+  7  	     if SQL%found then
+  8  		     dbms_output.put_line('PIZZA IS AVAILABLE');
+  9  	     else
+ 10  		     dbms_output.put_line('PIZZA NOT AVAILABLE');
+ 11  	     END IF;
+ 12  END;
+ 13  /
+Enter value for ptype: pan
+old   5: 	ptype := '&ptype';
+new   5: 	ptype := 'pan';
+PIZZA IS AVAILABLE                                                                                                                                    
+
+PL/SQL procedure successfully completed.
+
+SQL> REM 2. For the given customer name and a range of order date, find whether a customer had
+SQL> REM placed any order, if so display the number of orders placed by the customer along
+SQL> REM with the order number(s).
+SQL> 
+SQL> DECLARE
+  2  	     no_of_orders NUMBER(3);
+  3  	 order_id CHAR(5);
+  4  	 c_name customer.cust_name % TYPE;
+  5  	 start_date DATE;
+  6  	 end_date DATE;
+  7  
+  8  	 CURSOR order_select IS
+  9  		     SELECT order_no
+ 10  		     FROM orders, customer
+ 11  		     WHERE order_date BETWEEN start_date AND end_date
+ 12  	     AND customer.cust_id = orders.cust_id
+ 13  	     AND cust_name = c_name;
+ 14  
+ 15  BEGIN
+ 16  	     c_name := '&c_name';
+ 17  	     start_date := '&start_date';
+ 18  	     end_date := '&end_date';
+ 19  
+ 20  	     OPEN order_select;
+ 21  
+ 22  	 FETCH order_select INTO order_id;
+ 23  
+ 24  	     IF order_select%FOUND = False THEN
+ 25  		     DBMS_OUTPUT.PUT_LINE('Customer '||c_name||' has not done any orders in this time period.');
+ 26  	     ELSE
+ 27  	     DBMS_OUTPUT.PUT_LINE('Orders:');
+ 28  	     WHILE order_select%FOUND LOOP
+ 29  		 DBMS_OUTPUT.PUT_LINE(order_id);
+ 30  		 FETCH order_select INTO order_id;
+ 31  	     END LOOP;
+ 32  	     DBMS_OUTPUT.PUT_LINE('Customer '||c_name||' has done '||order_select%ROWCOUNT||' orders in this time period.');
+ 33  
+ 34  	     END IF;
+ 35  
+ 36  	     CLOSE order_select;
+ 37  END;
+ 38  /
+Enter value for c_name: Hari
+old  16: 	c_name := '&c_name';
+new  16: 	c_name := 'Hari';
+Enter value for start_date: 27-JUN-2015
+old  17: 	start_date := '&start_date';
+new  17: 	start_date := '27-JUN-2015';
+Enter value for end_date: 30-JUN-2015
+old  18: 	end_date := '&end_date';
+new  18: 	end_date := '30-JUN-2015';
+Orders:                                                                                                                                               
+OP100                                                                                                                                                 
+OP500                                                                                                                                                 
+Customer Hari has done 2 orders in this time period.                                                                                                  
+
+PL/SQL procedure successfully completed.
+
+SQL> REM 3. Display the customer name along with the details of pizza type and its quantity
+SQL> REM ordered for the given order number. Also find the total quantity ordered for the given
+SQL> REM order number as shown below:
+SQL> 
+SQL> DECLARE
+  2  	     no_of_orders NUMBER(3);
+  3  	 order_id CHAR(5);
+  4  	 c_name customer.cust_name % TYPE;
+  5  	 p_type pizza.pizza_type % TYPE;
+  6  	 qty order_list.qty % TYPE;
+  7  
+  8  	 CURSOR order_details IS
+  9  		     SELECT pizza_type, qty
+ 10  		     FROM pizza, order_list
+ 11  		     WHERE order_no = order_id
+ 12  	     AND pizza.pizza_id = order_list.pizza_id;
+ 13  
+ 14  	 CURSOR person_details IS
+ 15  	     SELECT cust_name
+ 16  	     FROM customer, orders
+ 17  	     WHERE orders.cust_id = customer.cust_id
+ 18  	     AND orders.order_no = order_id;
+ 19  
+ 20  BEGIN
+ 21  	     order_id := '&order_id';
+ 22  
+ 23  	 OPEN person_details;
+ 24  	 OPEN order_details;
+ 25  
+ 26  	 FETCH person_details INTO c_name;
+ 27  	 FETCH order_details INTO p_type, qty;
+ 28  
+ 29  	     IF person_details%FOUND = False THEN
+ 30  		     DBMS_OUTPUT.PUT_LINE('Specified order does not exist.');
+ 31  	     ELSE
+ 32  	     DBMS_OUTPUT.PUT_LINE('Customer Name: '||c_name||'.');
+ 33  	     DBMS_OUTPUT.PUT_LINE('Has ordered the following Pizza: ');
+ 34  	     DBMS_OUTPUT.PUT_LINE(RPAD('PIZZA TYPE', 13)||RPAD('QTY.', 4));
+ 35  	     WHILE order_details%FOUND LOOP
+ 36  		 DBMS_OUTPUT.PUT_LINE(RPAD(p_type, 13)||RPAD(qty, 4));
+ 37  		 FETCH order_details INTO p_type, qty;
+ 38  	     END LOOP;
+ 39  
+ 40  	     END IF;
+ 41  
+ 42  	     CLOSE person_details;
+ 43  	     CLOSE order_details;
+ 44  END;
+ 45  /
+Enter value for order_id: OP100
+old  21: 	order_id := '&order_id';
+new  21: 	order_id := 'OP100';
+Customer Name: Hari.                                                                                                                                  
+Has ordered the following Pizza:                                                                                                                      
+PIZZA TYPE   QTY.                                                                                                                                     
+pan          3                                                                                                                                        
+grilled      2                                                                                                                                        
+italian      1                                                                                                                                        
+spanish      5                                                                                                                                        
+
+PL/SQL procedure successfully completed.
+
+SQL> REM 4. Display the total number of orders that contains one pizza type, two pizza type and
+SQL> REM so on.
+SQL> 
+SQL> DECLARE
+  2  	     ptype_count NUMBER(3);
+  3  	 counter NUMBER(3);
+  4  	 max_count NUMBER(4);
+  5  	 order_no orders.order_no % TYPE;
+  6  
+  7  	 CURSOR total_types IS
+  8  		     SELECT COUNT(DISTINCT pizza_type)
+  9  		     FROM pizza;
+ 10  
+ 11  	 CURSOR type_counter IS
+ 12  	     SELECT order_no
+ 13  	     FROM order_list
+ 14  	     GROUP BY order_no
+ 15  	     HAVING COUNT(order_no) = counter;
+ 16  
+ 17  BEGIN
+ 18  	     counter := 0;
+ 19  	 OPEN total_types;
+ 20  
+ 21  	 FETCH total_types INTO max_count;
+ 22  
+ 23  	     IF max_count = 0 THEN
+ 24  		     DBMS_OUTPUT.PUT_LINE('Table: Pizza is Empty.');
+ 25  	     ELSE
+ 26  	     DBMS_OUTPUT.PUT_LINE('Number of Orders that contain: ');
+ 27  	     FOR COUNT IN 1..max_count LOOP
+ 28  		 ptype_count := 0;
+ 29  		 counter := counter + 1;
+ 30  		 OPEN type_counter;
+ 31  		 FETCH type_counter INTO order_no;
+ 32  		 WHILE type_counter%FOUND LOOP
+ 33  		     ptype_count := ptype_count + 1;
+ 34  		     FETCH type_counter INTO order_no;
+ 35  		 END LOOP;
+ 36  		 CLOSE type_counter;
+ 37  
+ 38  		 DBMS_OUTPUT.PUT_LINE(counter||' Pizza Type(s): '||ptype_count);
+ 39  	     END LOOP;
+ 40  	     END IF;
+ 41  
+ 42  	 CLOSE total_types;
+ 43  END;
+ 44  /
+Number of Orders that contain:                                                                                                                        
+1 Pizza Type(s): 2                                                                                                                                    
+2 Pizza Type(s): 1                                                                                                                                    
+3 Pizza Type(s): 2                                                                                                                                    
+4 Pizza Type(s): 1                                                                                                                                    
+
+PL/SQL procedure successfully completed.
+
+SQL> spool off;

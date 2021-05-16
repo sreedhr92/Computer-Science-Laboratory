@@ -1,0 +1,46 @@
+.topnav a{
+ 		float: left;
+  		color: #d9dab0;
+  		text-align: center;
+  		padding: 14px 16px;
+  		text-decoration: none;
+  		font-size: 16px;
+		background-color: #00587a;
+		}
+.topnav a:hover {
+  		background-color: #eb596e;
+  		color: #f4f9f9;
+		}
+.topnav a.active {
+  		background-color: #4CAF50;
+  		color: white;
+		}
+	
+.mail a{
+	float: centre;
+	color:rgb(41, 89, 179);
+	text-align: centre;
+	font-size: 17px;
+	text-decoration: none;
+	padding: 6px 8px;
+}
+.fade-out {
+	animation: fadeOut ease 3s;
+	animation-iteration-count: infinite;
+  }
+  @keyframes fadeOut {
+	0% {
+	  opacity:1;
+	}
+	100% {
+	  opacity:0;
+	}
+  }
+.animation {
+	width: 100px;
+    height: 100px;
+	position: relative;
+	animation-name: a1;
+	animation-duration: 4s;
+	animation-iteration-count: infinite;
+  }

@@ -1,0 +1,18 @@
+body {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 50vh;
+	background: #da8739;
+  }
+  h1 {
+	margin: 0 0 0.25em;
+  }
+  input[type=text] {
+	background-position: 10px 10px;
+  }
+  input[type=text] {
+	background-color: #e3ebe8;
+	color: rgb(6, 46, 70);
+  }

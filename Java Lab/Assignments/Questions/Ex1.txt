@@ -1,0 +1,7 @@
+Program to print Fibonacci series upto n
+Program to print prime numbers
+Program to print sum of all digits of a 5 digit number
+Program to separately print sum of all even and odd digits of a six digit number
+Program to ask the user's name and greets the user after converting the name to uppercase
+
+

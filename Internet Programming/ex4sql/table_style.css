@@ -1,0 +1,29 @@
+table:hover {
+    transform: scale(1.2);
+  }
+  th {
+    padding: 15px;
+  text-align:centre;
+  background-color: #e84545;
+  border: 2px solid black;
+  color:white;
+  }
+  h1{
+    color: rgb(89, 228, 238);
+  }
+  tr:hover {background-color:#edffec;}
+  tr:nth-child(even) {background-color:#ffefa1;}
+  td{
+  padding: 15px;
+  text-align:centre;
+  border: 1px solid black;
+  }
+  table {
+    border: 1px solid black;
+  width : 50%;
+  border-collapse: collapse;
+  border: 1px solid black;
+  margin-left: auto;
+  margin-right: auto;
+  transition: transform 0.3s;
+  }

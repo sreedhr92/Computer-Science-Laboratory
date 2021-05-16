@@ -1,0 +1,10 @@
+3.Using NS2, simulate a wired network of 10 nodes. Establish two TCP and two UDP flow which passes through a bottleneck link (node 5 to node6). CO1,3, K4
+
+a. Simulate the given topology.
+
+b. Draw congestion window and of both TCP flow in the same graph
+
+c. Using any scripting language, find the total number of bytes received by each node in TCP flow1.
+
+d. Find how much time it takes for each packet to reach receiver in UDP flow2.
+

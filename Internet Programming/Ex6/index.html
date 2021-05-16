@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>Ajax Assignment</title>
+        <link href="style.css" rel="stylesheet" type="text/css"/>
+        <script src="index.js"></script>
+        <style>
+        </style>
+    </head>
+    <body>
+        <h1 style="color: rgb(5, 5, 5);">Country Names</h1>
+        <input type="text" list="select" onkeyup="disp();" id="input" name="countries">
+        <!-- I used data list since its provides a input searchbox and scrollable drop-down by default.
+        Also it provides the filteration of the options(but I used AJAX here for the autocompletion),
+        we can also use a <div> and <p> with onclick function to simulate the same by
+        displaying the only top 6-8 options which can be done at the servlet side-->
+        <datalist id="select">
+        </datalist>
+        <br><br><br>
+    </body>
+</html>

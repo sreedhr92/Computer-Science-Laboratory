@@ -1,0 +1,49 @@
+<html>
+
+<head>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+  <script src="script.js"></script>
+  <title>Add User</title>
+</head>
+
+<body>
+  <div class="main_home">
+    <p class="sign" align="center">Add User</p>
+    <form class="form1" id="add_form">
+      <input class="un" id="name" name ="name" type="text" align="center" placeholder="Name">
+      <input class="un" id="age" name="age" type="text" align="center" placeholder="age">
+      <input class="un" id="id" name="id" type="text" align="center" placeholder="id">
+      <label class="container"> Male
+        <input type="radio" name="gender" value="male">
+        <span class="checkmark"></span>
+     </label>
+     <label class="container"> Female
+        <input type="radio" name="gender" value="female">
+        <span class="checkmark"></span>
+    </label>
+    <br><br>
+      <input class="un" name="address" id="address" type="text" align="center" placeholder="address">
+      <label class="container"> Single
+        <input type="radio" name="mstat" value="single">
+        <span class="checkmark"></span>
+     </label>
+     <label class="container"> Married
+        <input type="radio" name="mstat" value="married">
+        <span class="checkmark"></span>
+    </label>
+    <br><br>
+    <input class="un" name="num" id="num" type="text" align="center" placeholder="phone number">
+    <br>
+    <label for="date" style="padding-left: 70px;padding-right: 20px;">Date of Visit</label>
+    <input id="date" name="date" type="date" align="centre">
+    <br><br><br>
+      <a class="submit" align="center" onclick="add();" >Add User</a>
+    </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

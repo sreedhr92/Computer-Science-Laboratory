@@ -1,0 +1,101 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>Registration Page</title>
+        <link href="style.css" rel="stylesheet" type="text/css"/>
+        <script src="script.js"></script>
+        <style>
+        #div1, #div2 {
+        float: left;
+        width: 150px;
+        height: 150px;
+        margin: 10px;
+        padding: 5px;
+        border: 2px solid black;
+        background-color: rgb(188, 224, 228);
+        }
+        select:invalid { color: gray; }
+        input[type=text]:focus {
+        background-color: lightblue;
+        }
+        input[type=text] {
+        width: 40%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        box-sizing: border-box;
+        }
+        body{
+    background-image: linear-gradient(to right, rgba(255,0,0,0), rgb(122, 160, 231));
+        }
+        select{
+            width: 40%;
+            padding: 16px 20px;
+            border: none;
+            border-radius: 4px;
+            background-color: #f4f9f9;
+        }
+        fieldset{
+            background-color: #ccf2f4
+        }
+
+        legend {
+        background-color: gray;
+        color: white;
+        padding: 5px 10px;
+        }
+        div {
+        float: left;
+        padding: 15px;
+        }
+        input { 
+        margin: 5px;
+        }
+        </style>
+    </head>
+    <body onload="startTime()">
+        <div id="txt" class="div1" style="position:absolute;top:0px;right:0px;"></div>
+		<br><br>
+        <form action="#" width="40%" method="post" target="_blank">
+            <fieldset>
+              <legend>Hospital Registration form:</legend>
+              <label for="name">First name:</label>
+              <input type="text" id="name" name="name" pattern ="[A-Za-z ]{1,32}"onblur="this.checkValidity();" onfocus="this.placeholder='';" placeholder="Your name.." oninvalid="alert('Name is invalid');"><br><br>
+              <label for="address">Address:</label>
+              <input type="text" id="address" name="address" pattern ="[A-Za-z0-9\/\.:]{1,100}"onblur="this.checkValidity();remv();" oninvalid="alert('Address is invalid')"; onfocus="this.placeholder='';" placeholder="Your address.." onselect="myFunction();"><br><br>
+              <p id="addr_rule"></p>
+              <label for="age">Age:</label>
+              <input type="number" id="age" name="age"value="0" min="0" max="100" onkeypress="alert('Please use the navigators!');"><br><br>
+              <label for="birthday">Birthday:</label>
+              <input type="date" id="birthday" name="birthday"><br><br>
+              <input type="radio" id="male" name="gender" value="Male">
+              <label for="male">Male</label><br><br>
+              <input type="radio" id="female" name="gender" value="Female">
+              <label for="female">Female</label><br><br>
+              <input type="radio" id="other" name="gender" value="Other">
+              <label for="other">Other</label><br><br>
+              <label for="mstat">Marital Status:</label>
+              <select name="mstat" id="mstat" onchange="alert('Are you willing to change the previously selected value');"> <br>
+                <option value="" disabled selected hidden>Select your option</option>
+                <option value="Single">Single </option> 
+                <option value="Married">Married</option> 
+              </select><br><br><br>
+              <label for="num">Contact Number:</label>
+              <input type ="tel" name="num" id="num" pattern="[0-9]{10}" oninvalid="alert('Please enter a valid phone number');"><br><br>
+              <label for="add">Addiction(drag and drop) :</label><br><br><br><br>
+              <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)">
+                <ul>
+                <li draggable="true" ondragstart="drag(event)" id="drag1">Alcohol</li>
+                <br><br><br>
+                <li draggable="true" ondragstart="drag(event)" id="drag2">Nicotic drugs</li>
+                </ul>
+              </div>
+              <div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+              <br><br><br><br><br><br><br><br><br><br>
+              <input type="submit" value="Submit" onclick="display_table();">
+              <input type="reset" value="Reset" onclick="drag_reset();">
+              
+            </fieldset>
+          </form>
+    </body>
+</html>

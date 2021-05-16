@@ -1,0 +1,107 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+    	<meta name="viewport" content="width=device-width">
+    	<title>Registration Gaming Conference</title>
+		<link rel="stylesheet" href="style.css">
+		<script src="https://kit.fontawesome.com/dfb243ca89.js" crossorigin="anonymous"></script>
+		<style>
+		hr.solid {
+  		border-top: 3px solid #bbb;
+		}
+		.tooltip {
+		margin: auto;
+  		position: relative;
+  		display: inline-block;
+		background:white;
+  		border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+		}
+		.tooltip .tooltiptext {
+  		visibility: hidden;
+ 		width: 120px;
+ 	 	background-color: black;
+  		color: #fff;
+  		text-align: center;
+  		padding: 5px 0;
+  		border-radius: 6px;
+ 		position: absolute;
+  		z-index: 1;
+		}
+
+		.tooltip:hover .tooltiptext {
+  		visibility: visible;
+		}
+		input[type=text] {
+  		width: 30%;
+  		padding: 12px 20px;
+  		margin: 8px 0;
+		background-color:gray;
+		color: #fff;
+  		box-sizing: border-box;
+}
+		select {
+ 		width: 30%;
+  		padding: 10px 15px;
+ 		border: none;
+  		border-radius: 4px;
+  		background-color: #f1f1f1;
+		}
+	</style>
+    </head>
+	<body background ="bg0.jpg">
+		<img src="lg1.jpg" width="100" height="80"alt="Page logo">
+		<font color="32e0c4">
+		<h2>International Gaming Conference Registration</h2>
+		<hr class="solid">
+		<div class="topnav">
+	  	<a href="home.html" target="_blank"data-toggle="tooltip" title="This directs you to home page">Home </a>
+	  	<a href="committe.html" target="_blank"data-toggle="tooltip" title="This directs you to Committee organisation page">Committee </a>
+	  	<a href="papers.html"target="_blank"data-toggle="tooltip" title="This directs you to Call for Paper page"">Call For Papers </a>
+	  	<a href="dates.html" target="_blank"data-toggle="tooltip" title="This directs you to Important dates page">Important Dates </a>
+	  	<a href="workshop.html"target="_blank"data-toggle="tooltip" title="This directs you to Workshops page">Workshops </a>
+	  	<a href="registration.html"target="_blank"data-toggle="tooltip" title="This directs you to New Registration page">Registration </a>
+	  	<a href="contact.html"target="_blank"data-toggle="tooltip" title="This directs you to Contact page">Contact</a>
+		</div><br><br><br><br><br>
+		<font color="red">
+	  	<div class="tooltip">Register rules
+			<span class="tooltiptext">All fields are mandotory</span>
+	  	</div>
+		<p style="color:white">Please fill in the details to get registered for the events and workshop of the conferences</p>
+		<font color="ffbb91">
+		<form>
+  			<label for="fname">First name:</label>
+  			<input type="text" id="fname" name="fname"><br><br>
+  			<label for="lname">Last  name:</label>
+  			<input type="text" id="lname" name="lname"><br><br>
+			<input type="radio" id="male" name="gender" value="male">
+  			<label for="male">Male</label><br>
+  			<input type="radio" id="female" name="gender" value="female">
+  			<label for="female">Female</label><br>
+  			<input type="radio" id="other" name="gender" value="other">
+  			<label for="other">Other</label><br><br><br>
+			<input type="checkbox" id="Phone" name="device1" value="Phone">
+  			<label for="device1"> I have a Phone</label><br>
+  			<input type="checkbox" id="iPad" name="device2" value="iPad">
+  			<label for="device2"> I have a iPad</label><br>
+  			<input type="checkbox" id="PC" name="device3" value="PC">
+  			<label for="device3"> I have a PC</label><br><br>
+			<label for="country">Country:</label>
+       		<select name="country" id="country"> <br>
+            <option value="India">India</option> 
+            <option value="Sri Lanka">Sri Lanka</option> 
+            <option value="Australia">Australia</option> 
+        	</select><br><br><br>
+			<input type="submit" value="Submit"> 
+			<input type="reset" value="Reset"> <br>
+			<label for="fileselect">Upload your bio:</label>
+        	<input type="file" name="upload" id="fileselect">
+		</form>
+		<font color="black">
+		<footer>
+				<p style="color:gray;">Author: Sreedhar V
+				<br> <a href="mailto:sreedhar18161@cse.ssn.edu.in">Mail id</a></p>
+				<i>&copy;Gaming techs designs</i><br>
+				<a href="index.html" target="_blank"data-toggle="tooltip" title="This directs you to index page"><i class="fas fa-arrow-left"></i></a>
+		</footer>
+		</body>
+</html>

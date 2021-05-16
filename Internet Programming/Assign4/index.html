@@ -1,0 +1,82 @@
+<html>
+<body>
+
+<form name="Form1" method ="GET" action="http://localhost:8080/Assign4/GetMtd">
+<B>FORM:</B>
+<br><br>
+
+<label for="EmpId">Employee ID:</label>
+<input type="number" id="EmpId" name="EmpId"><br><br>
+
+<label for="Empname">Employee name:</label>
+<input type="text" id="Empname" name="Empname"><br><br>
+
+<label for="desig">Designation:</label>
+<select name="desig" id="desig">
+  <option value="CEO">CEO</option>
+  <option value="HR">HR</option>
+  <option value="Manager">Manager</option>
+  <option value="IndividualContributor">IndividualContributor</option>
+</select><br><br>
+
+<label for="dept" >Department:</label><br>
+  <input type="radio" id="Production" name="dept" required value="Production">
+  <label for="Production">Production</label><br>
+
+  <input type="radio" id="Purchasing" name="dept" required value="Purchasing">
+  <label for="Purchasing">Purchasing</label><br>
+
+  <input type="radio" id="Marketing" name="dept" required value="Marketing">
+  <label for="Marketing">Marketing</label><br>
+
+  <input type="radio" id="AF" name="dept" required value="Accounting and Finance">
+  <label for="Accounting and Finance">Accounting and Finance</label><br><br>
+
+
+<label for="BasicSal">BasicSalary:</label>
+<input type="number" id="BasicSal" name="BasicSal"><br><br>
+
+
+<label for="Contact">Phone Number:</label>
+<input type="number" id="Contact" name="Contact" maxlength="10" placeholder="1234567890"><br><br>
+
+<label for="Address">Address:</label><br>
+<textarea id="Address" name="Address" rows="4" cols="50">
+</textarea><br><br>
+
+<label for="birthday">D.O.B:</label>
+<input type="date" id="birthday"name="birthday"required><br><br>
+
+
+<label for="gender" >Gender:</label><br>
+  <input type="radio" id="male" name="gender" required value="male">
+  <label for="male">Male</label><br>
+
+  <input type="radio" id="female" name="gender" required value="female">
+  <label for="female">Female</label><br>
+
+  <input type="radio" id="other" name="gender"required value="other">
+  <label for="other">Other</label><br><br>
+
+
+
+<label for="MStatus">Marital Status:</label>
+<select name="MStatus" id="MStatus">
+  <option value="Not Mentioned">Not Mentioned</option>
+  <option value="Married">Married</option>
+  <option value="Single">Single</option>
+  <option value="Divorced">Divorced</option>
+  
+</select><br><br>
+
+
+
+<input type=submit value="Submit">
+
+<input type="reset" value="Reset">
+
+
+</form>
+
+</body>
+</html>

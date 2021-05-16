@@ -1,0 +1,59 @@
+<html >
+    <head>
+    <title>Table of Marks</title>
+    <style>
+		table {
+  		border: 1px solid black;
+		width : 40%;
+		border-collapse: collapse;
+		border: 1px solid black;
+		}
+		th {
+  		padding: 15px;
+		text-align:centre;
+		background-color: #f2a154;
+		border: 2px solid black;
+		}
+		tr:hover {background-color: #ffdcdc;}
+		tr:nth-child(even) {background-color: #f2f2f2;}
+		td{
+		padding: 15px;
+		text-align:centre;
+        color : #9b5151
+		border: 1px solid black;
+		}
+    </style>
+    <script type = "text/javascript">
+    var d={}; // dictionary where key is the name and grade is value
+    var i=5;
+    while(i>0)
+    {
+        var name = window.prompt( "Enter the name of the Student :");
+        var temp = window.prompt( "Enter the mark obtained :","0");
+        var mark = parseInt(temp);
+        if(mark>90)
+            d[name] = "A";
+        else if(mark<91 && mark>80)
+            d[name] = "B";
+        else if(mark<81 && mark>70)
+            d[name] = "C";
+        else if(mark<71 && mark>60)
+            d[name] = "D";
+        else
+            d[name] = "E";
+        i--;
+    }
+    document.writeln( "<h2>Progess Card</h2>" );
+    document.writeln( "<table border = \"1\" width = \"100%\">" );
+    document.writeln( "<tr><th>Name</th><th>Grade</th></tr>");
+    for(var key in d)
+    {
+        document.writeln("<tr><td>"+key+"</td><td>"+d[key]+"</td></tr>");
+    }
+    document.writeln( "</table>" );
+    </script>
+</head>
+<body>
+    <p>Click Refresh (or Reload) to run the script again</p>
+</body>
+</html>
