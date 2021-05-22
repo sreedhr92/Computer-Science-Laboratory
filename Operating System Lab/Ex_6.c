@@ -312,7 +312,7 @@ sleep(1);
 int main()
 {
 int i=0;
-pid_t temp_pid;
+pid_t temp_pid; 
 segid = shmget (IPC_PRIVATE, SIZE, IPC_CREAT | IPC_EXCL | SHMPERM );
 
 empty_id=shmget(IPC_PRIVATE,sizeof(sem_t),IPC_CREAT|IPC_EXCL|

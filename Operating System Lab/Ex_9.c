@@ -375,7 +375,7 @@ The page table for p1
 Page 0 : Frame 16
 Page 1 : Frame 18
 Page 2 : Frame 26
-
+ 
 
 The Process is divided into 4 pages
 The page table for p3
